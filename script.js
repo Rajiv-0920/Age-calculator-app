@@ -101,63 +101,6 @@ btnEl.addEventListener("click", () => {
       }
     }
   });
-  // if (+dayEl.value === 0 || +monthEl.value === 0 || +yearEl.value === 0) {
-  //   dayEl.classList.add("error");
-  //   monthEl.classList.add("error");
-  //   yearEl.classList.add("error");
-  //   label.forEach((value) => {
-  //     value.classList.add("error");
-  //   });
-  //   span.forEach((value) => {
-  //     value.classList.add("error");
-  //   });
-  //   p.forEach((value) => {
-  //     value.classList.remove("error");
-  //   });
-  // } else {
-  //   if (+dayEl.value >= 32 || +dayEl.value < 0 || inputDays < +dayEl.value) {
-  //     p[0].classList.add("error");
-  //     dayEl.classList.add("error");
-  //     label[0].classList.add("error");
-  //     span[0].classList.remove("error");
-  //     birthDay.innerHTML = "--";
-  //     birthMonth.innerHTML = "--";
-  //     birthYear.innerHTML = "--";
-  //   } else if (+monthEl.value >= 13 || +monthEl.value < 0) {
-  //     p[1].classList.add("error");
-  //     monthEl.classList.add("error");
-  //     label[1].classList.add("error");
-  //     span[1].classList.remove("error");
-  //     birthDay.innerHTML = "--";
-  //     birthMonth.innerHTML = "--";
-  //     birthYear.innerHTML = "--";
-  //   } else if (
-  //     (+yearEl.value >= cY && +monthEl.value >= cM && +dayEl.value >= cD) ||
-  //     +yearEl.value >= cY
-  //   ) {
-  //     p[2].classList.add("error");
-  //     yearEl.classList.add("error");
-  //     label[2].classList.add("error");
-  //     span[2].classList.remove("error");
-  //     birthDay.innerHTML = "--";
-  //     birthMonth.innerHTML = "--";
-  //     birthYear.innerHTML = "--";
-  //   } else {
-  //     p.forEach((value) => {
-  //       value.classList.remove("error");
-  //     });
-  //     label.forEach((value) => {
-  //       value.classList.remove("error");
-  //     });
-  //     span.forEach((value) => {
-  //       value.classList.remove("error");
-  //     });
-  //     dayEl.classList.remove("error");
-  //     monthEl.classList.remove("error");
-  //     yearEl.classList.remove("error");
-  //     ageCalculate();
-  //   }
-  // }
 });
 function ageCalculate() {
   let currentDate = new Date();
@@ -179,7 +122,7 @@ function ageCalculate() {
   // Days Calculation
   let currentDay = currentDate.getDate();
   let day = 0;
-  if (currentDay <= +dayEl.value) {
+  if (currentDay < +dayEl.value) {
     month -= 1;
     day =
       currentDay + getDaysInMonth(currentMonth - 1, currentYear) - +dayEl.value;
